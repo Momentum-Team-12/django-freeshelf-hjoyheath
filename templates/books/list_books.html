@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<h1>FREE BOOKS</h1>
+<a href="{% url 'add_book' %}">Add New</a>
+
+
+
+{% for book in books %}
+<div>
+
+    <h2>{{ book.title }}</h2>
+    <p>{{ book.author }}</p>
+    <div>
+        <a href="{% url 'book_detail' book.pk %}" >Details</a>
+    </div>
+    <a href="{% url 'edit_book' book.pk %}">Edit</a>
+    <a href="{% url 'delete_book' book.pk %}" >Delete</a>
+
+</div>
+{% endfor %}
+
+
+{% endblock %}

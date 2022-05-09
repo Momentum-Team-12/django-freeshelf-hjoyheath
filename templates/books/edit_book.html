@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Edit Book</h1>
+<a href="{% url 'list_books' %}">Home Page</a>
+<div>
+  <form action="{% url 'edit_book' pk=book.pk %}" method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <p>Are you sure you want to edit {{ book.title }}?</p>
+    <div>
+      <button type="submit">Submit</button><br />
+      <a href="{% url 'list_books' %}">Cancel</a>
+    </div>
+  </form>
+</div>
+{% endblock %}
