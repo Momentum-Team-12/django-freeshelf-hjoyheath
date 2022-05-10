@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<h1>Details</h1> 
+<a href="{% url 'list_books' %}">Home Page</a>
+
+<div>
+    <h2>Author: {{ book.author }} </h2> 
+    <br>
+    <h2>Title: {{ book.title }}</h2>   
+    <h3>Description:</h3>
+    <h4>{{ book.description }}</h4>
+</div>
+    
+{% endblock %}
+
+

@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<h1>{{category}}</h1> 
+
+<a href="{% url 'login' %}">Login</a>
+
+{% for book in books %}
+            
+    <div>
+        <h3>{{ book.title }}</h3>
+        <p>{{ book.author }}</p>
+        <p>{{ book.created_at }}</p>
+        <a href="{{book.url}}">Link to Book</a>
+        <a href="{% url 'book_detail' book.pk %}">Read More</a>
+    </div>
+    
+    {% endfor %}
+
+{% endblock %}
