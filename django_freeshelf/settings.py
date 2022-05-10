@@ -11,7 +11,6 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
-import os
 import environ
 
 env = environ.Env(
@@ -69,7 +68,7 @@ ROOT_URLCONF = "django_freeshelf.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [os.path.join(BASE_DIR, 'templates')],
+        "DIRS": [BASE_DIR, 'templates'],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -117,7 +116,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = "en-us"
 
-TIME_ZONE = "EST"
+TIME_ZONE = "UTC"
 
 USE_I18N = True
 
@@ -125,14 +124,14 @@ USE_L10N = True
 
 USE_TZ = True
 
+LOGIN_REDIRECT_URL = '/'
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = "/static/"
-MEDIA_ROOT = BASE_DIR / 'media'
-MEDIA_URL = '/media/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static/img')
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
