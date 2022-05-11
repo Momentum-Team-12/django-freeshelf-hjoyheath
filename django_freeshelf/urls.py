@@ -24,6 +24,8 @@ urlpatterns = [
     path('', books_views.list_books, name='list_books'),
     path('books/<int:pk>', books_views.book_detail, name='book_detail'),
     path('accounts/login/', books_views.list_books, name='login'),
-    path('books/<slug:slug>', books_views.books_by_category, name='category')
+    path('books/<slug:slug>', books_views.books_by_category, name='category'),
+    path('books/<int:pk>/favorites/new/', books_views.add_favorite, name='add_favorite'),
+    path('favorites', books_views.books_by_favorite, name='favorites')
 
 ]

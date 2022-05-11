@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<h1>Your Favorites</h1> 
+
+<a href="{% url 'login' %}">Login</a>
+
+{% for favorite in favorites %}
+    
+    <div>
+        <h3>{{ favorite.book.title }}</h3>
+        <p>{{ favorite.book.author }}</p>
+        <p>{{favorite.book.category}}</p>
+        <p>{{ favorite.book.created_at }}</p>
+        <a href="{{book.url}}">Link to Book</a>
+        <a href="{% url 'book_detail' favorite.book.pk %}">Read More</a>
+    </div>
+        
+    {% endfor %}
+
+{% endblock %}

@@ -1,13 +1,10 @@
 from django import forms
-from .models import Book
+from .models import Favorite
 
 
-class BookForm(forms.ModelForm):
+class FavoriteForm(forms.ModelForm):
     class Meta:
-        model = Book
+        model = Favorite
         fields = [
-            'title',
-            'author',
-            'description',
-
+            
         ]

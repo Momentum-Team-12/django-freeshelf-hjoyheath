@@ -10,6 +10,13 @@
     <h2>Title: {{ book.title }}</h2>   
     <h3>Description:</h3>
     <h4>{{ book.description }}</h4>
+
+    <form action="{% url 'add_favorite' pk=book.pk %}" method="POST">
+        
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Favorite</button>
+   
 </div>
     
 {% endblock %}
