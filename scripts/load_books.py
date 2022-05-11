@@ -1,6 +1,7 @@
 from books.models import Book
 import csv
 
+
 def run():
     with open('sample_books.csv') as file:
         reader = csv.reader(file)

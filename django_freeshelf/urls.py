@@ -20,7 +20,7 @@ from books import views as books_views
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path('accounts/', include('registration.backends.simple.urls')),
+    path('accounts/', include('registration.backends.simple.urls'), name='login'),
     path('', books_views.list_books, name='list_books'),
     path('books/<int:pk>', books_views.book_detail, name='book_detail'),
     path('accounts/login/', books_views.list_books, name='login'),
